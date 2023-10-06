@@ -9,7 +9,7 @@ export class Cartridge {
         return this.gameData.getUint8(address);
     }
 
-    writeByte(address: number){
+    writeByte(address: number){ //to be handled by the MBC implementations
         return;
     }
 
@@ -35,23 +35,23 @@ export class Cartridge {
         const sizeType = this.gameData.getUint8(0x148);
         switch(sizeType){
             case 0x00:
-                return 0x008000;
+                return 0x008000; //32 KiB
             case 0x01:
-                return 0x010000;
+                return 0x010000; //64 KiB
             case 0x02:
-                return 0x020000;
+                return 0x020000; //128 KiB
             case 0x03:
-                return 0x040000;
+                return 0x040000; //256 KiB
             case 0x04:
-                return 0x080000;
+                return 0x080000; //512 KiB
             case 0x05:
-                return 0x100000;
+                return 0x100000; //1 MiB
             case 0x06:
-                return 0x200000;
+                return 0x200000; //2 MiB
             case 0x07:
-                return 0x400000;
+                return 0x400000; //4 MiB
             case 0x08:
-                return 0x800000;
+                return 0x800000; //8 MiB
             default:
                 return 0x800000;
         }
@@ -62,15 +62,15 @@ export class Cartridge {
         switch(sizeType){
             case 0x00:
             case 0x01:
-                return 0;
+                return 0; //no extended memory
             case 0x02:
-                return 0x002000;
+                return 0x002000; //8 KiB
             case 0x03:
-                return 0x008000;
+                return 0x008000; //32 KiB
             case 0x04:
-                return 0x020000;
+                return 0x020000; //128 KiB
             case 0x05:
-                return 0x010000;
+                return 0x010000; //64 KiB
             default:
                 return 0x020000;
         }
