@@ -1,0 +1,25 @@
+{
+  "name": "ts-gameboy-emu",
+  "version": "0.1.0",
+  "description": "TypeScript Gameboy Emulator",
+  "private": "true",
+  "scripts": {
+    "build": "webpack --config webpack.npm-package.js",
+    "serve": "webpack serve --mode=development",
+    "test": "jest"
+  },
+  "author": "Elena Roushall",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.1",
+    "raw-loader": "^4.0.2",
+    "ts-jest": "^26.5.3",
+    "ts-loader": "^8.4.0",
+    "typescript": "^4.9.5",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
